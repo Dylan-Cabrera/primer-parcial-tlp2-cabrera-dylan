@@ -24,12 +24,10 @@ const AssetSchema = new Schema(
       type: Types.ObjectId,
       ref: "User"
     },
-    category: [
-      {
+    category: [{
         type: Types.ObjectId,
-      ref: "Category"
-      }
-    ]
+        ref: "Category"
+      }]
   },
   { timestamps: true }
 );
