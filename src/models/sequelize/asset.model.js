@@ -25,11 +25,13 @@ export const AssetModel = sequelize.define("Asset", {
 // ! FALTA COMPLETAR ACA
 
   AssetModel.belongsTo(UserModel, {
-    foreingKey: "user_id",
+    foreignKey: "user_id",
     as: "assets"
   });
 
   UserModel.hasMany(AssetModel, {
-    foreingKey: "user_id",
+    foreignKey: "user_id",
     as: "responsible"
+  },{
+    onDelete: "CASCADE"
   });
