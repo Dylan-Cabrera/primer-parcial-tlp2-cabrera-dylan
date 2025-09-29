@@ -17,7 +17,7 @@ const CategorySchema = new Schema(
 );
 
 // ! FALTA COMPLETAR ACA
-CategorySchema.virtual("assts", {
+CategorySchema.virtual("assets", {
     ref: "Asset",
     localField: "_id",
     foreignField: "category"
