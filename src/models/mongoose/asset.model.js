@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 // TODO: completar relaciones embebidas y referenciadas
 
@@ -20,7 +20,16 @@ const AssetSchema = new Schema(
     },
     acquisitionDate: { type: Date, required: true },
     acquisitionValue: { type: Number, required: true, min: 0 },
-    // ! FALTA COMPLETAR ACA
+    responsible: {
+      type: Types.ObjectId,
+      ref: "User"
+    },
+    category: [
+      {
+        type: Types.ObjectId,
+      ref: "Category"
+      }
+    ]
   },
   { timestamps: true }
 );
